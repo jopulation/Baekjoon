@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "__tuple": "c",
+        "array": "c",
+        "ratio": "c",
+        "typeinfo": "c"
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
+}
