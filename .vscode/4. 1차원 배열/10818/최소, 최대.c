@@ -11,13 +11,13 @@ int main() {
 	}
 	int max = number[0];
 	int min = number[0];
-	// MAX Ã£´Â Áß
+	// MAX ì°¾ëŠ” ì¤‘
 	for (int i = 1; i < N; i++) {
 		if (max < number[i]) {
 			max = number[i];
 		}
 	}
-	// MIN Ã£´Â Áß
+	// MIN ì°¾ëŠ” ì¤‘
 	for (int i = 1; i < N; i++) {
 		if (min > number[i]) {
 			min = number[i];
