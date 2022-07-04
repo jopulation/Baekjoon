@@ -21,6 +21,7 @@ int main() {
         }
     }
 
+    // 중복 방지 counting
     pos = number[0];
     for(i = 0; i < 10; i++) {
         if(pos != number[i]) {
@@ -29,5 +30,6 @@ int main() {
         }
     }
     printf("%d", count);
+    
     return 0;
 }
