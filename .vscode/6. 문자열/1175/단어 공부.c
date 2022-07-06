@@ -4,7 +4,7 @@
 int main() {
     int i, j;
     int max;
-    int maxNum = 0;
+    int maxNum;
 
     char answer;
     char string[1000001];
@@ -27,6 +27,7 @@ int main() {
 
     // Max 찾기
     max = alpha[0];
+    maxNum = 0;
 
     for(i = 0; i < 26; i++) {
         if(max < alpha[i]) {
