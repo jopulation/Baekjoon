@@ -1,28 +1,26 @@
 #include <stdio.h>
-#include <ctype.h>
+#include <string.h>
 
 int main() {
     int i, j;
+    int len;
     int max;
     int maxNum;
 
-    char answer;
+    char answer = '\0';
     char string[1000001];
     int alpha[26] = { 0, };
     
     string[0] = '\0';
     gets(string);
+    len = strlen(string);
 
-    for(i = 0; string[i] != '\0'; i++) {
-        // 소문자를 대문자로 바꾸기
-        if(islower(string[i]))
-            string[i] = toupper(string[i]);
+    for(i = 0; i < len; i++) {
+        if(65 <= string[i] && string[i] <= 90)
+            alpha[string[i] - 65]++;
 
-        for(j = 0; j < 26; j++) {
-            if(string[i] == 'A' + j) {
-                alpha[j]++;
-            }
-        }
+        else if(97 <= string[i] && string[i] <= 122)
+            alpha[string[i] - 97]++;
     }
 
     // Max 찾기
