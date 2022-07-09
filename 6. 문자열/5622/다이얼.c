@@ -22,10 +22,6 @@ int main() {
         dial[i][4] = i + 1;
     }
 
-    // for(i = 2; i <= 9; i++) {
-    //     printf("%d\n", dial[i][4]);
-    // }
-
     words[0] = '\0';
     gets(words);
     len = strlen(words);
