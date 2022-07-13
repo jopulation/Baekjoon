@@ -57,3 +57,5 @@ int Check(char arr[], int w) {
     }
     return 0;
 }
+
+// 도영아 사랑해
