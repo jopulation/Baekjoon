@@ -1,5 +1,5 @@
 // 별 찍기 - 3
-#include <stdint.h>
+#include <stdio.h>
 
 int main()
 {
