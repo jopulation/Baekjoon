@@ -2,61 +2,47 @@
 #include <stdio.h>
 #include <string.h>
 
-int Count(char word[]);
-int Check(char arr[], int w);
+int checker(char *s);
 
-int main() {
+int main()
+{
+    int N; // 1<= N <= 100 N은 자연수.
     int i;
-    int count = 0;
-    int N;
-
-    char words[100][101];
+    int cnt = 0;
+    char words[101]; // 단어는 알파벳 소문자만!
 
     scanf("%d", &N);
+    getchar();
 
-    for(i = 0; i < N; i++) {
-        scanf("%s", &words[i]);
-        count += Count(words[i]);
+    for (i = 0; i < N; i++)
+    {
+        gets(words);
+        cnt += checker(words);
     }
-
-    printf("%d\n", count);
+    printf("%d\n", cnt);
 
     return 0;
 }
 
-int Count(char word[]) {
-    int i, j;
-    int len = strlen(word);
-    int count = 0;
-    char alpha[26];
+int checker(char *s)
+{
+    int len = strlen(s);
+    int alpha[26] = { 0, };
+    alpha[s[0] - 'a']++;
 
-    alpha[count] = word[0];
-    
-    for(i = 1; i < len; i++) {
-        if(alpha[count] != word[i]) {
-            if(Check(alpha, word[i]))
-                return 0;
-            else
-                alpha[++count] = word[i];
+    for (int i = 0; i < len - 1; i++)
+    // len == 1 일 때의 경우는 바로 패스
+    {
+        if (s[i] == s[i + 1])
+        {
+            continue;
         }
+        // s[i] != s[i + 1] 일 떄의 경우
+        else if (alpha[s[i+1] - 'a'] == 1)
+        {
+            return 0;
+        }
+        alpha[s[i+1] - 'a']++;
     }
-
-    for(j = 0; alpha[j] != '\0'; j++) {
-        alpha[j] = '\0';
-    }
-
     return 1;
 }
-
-int Check(char arr[], int w) {
-    int i;
-    int len = strlen(arr);
-    for(i = 0; i < len; i++) {
-        if(arr[i] == w) {
-            return 1;
-        }
-    }
-    return 0;
-}
-
-// 도영아 사랑해
