@@ -1,4 +1,5 @@
 # 블랙잭
+# 브론즈2
 
 n, m = map(int, input().split()) # N(3 ≤ N ≤ 100), M(10 ≤ M ≤ 300,000)
 cards = map(int, input().split())
